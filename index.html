@@ -23,30 +23,103 @@
             font-size: 2em;
             margin-bottom: 20px;
         }
+        .subcategory-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: darkblue;
+            border-bottom: 2px solid darkblue;
+            padding-bottom: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="welcome-banner">Duales Studium Wirtschaftsingenieurwesen</div>
-    <h1>Upload Files</h1>
-    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" required />
-        <button type="submit">Upload</button>
-    </form>
-    <div id="message"></div>
-    <script>
-        const form = document.getElementById('uploadForm');
-        const message = document.getElementById('message');
+    <h2 class="subcategory-title">Überblick</h2>
+    <table border="1" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="padding: 10px; text-align: left;">Merkmal</th>
+                <th style="padding: 10px; text-align: left;">Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 10px;">Abschluss</td>
+                <td style="padding: 10px;">Bachelor of Engineering (B. Eng.)</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Studiendauer</td>
+                <td style="padding: 10px;">7 Semester</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Studienform</td>
+                <td style="padding: 10px;">Vollzeit oder dual</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">ECTS</td>
+                <td style="padding: 10px;">210 Punkte</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Sprache</td>
+                <td style="padding: 10px;">Deutsch</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Studienbeginn</td>
+                <td style="padding: 10px;">Wintersemester</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Fakultät</td>
+                <td style="padding: 10px;">Maschinenbau</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Zulassungsbeschränkung</td>
+                <td style="padding: 10px;">Keine</td>
+            </tr>
+            <tr>
+                <td style="padding: 10px;">Akkreditierung</td>
+                <td style="padding: 10px;">ASIIN</td>
+            </tr>
+        </tbody>
+    </table>
 
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const response = await fetch('/upload', {
-                method: 'POST',
-                body: formData
-            });
-            const result = await response.json();
-            message.textContent = result.message;
-        });
-    </script>
+    <h2 class="subcategory-title">Studieninhalte</h2>
+    <h3>Grundstudium (1.–2. Semester):</h3>
+    <ul>
+        <li>Naturwissenschaftliche und technische Grundlagen</li>
+        <li>Wirtschaftliche Basiskenntnisse</li>
+    </ul>
+    <h3>Vertiefungsstudium (3.–7. Semester):</h3>
+    <ul>
+        <li>Integrative Fächer wie Produktmanagement, Vertrieb, Logistik</li>
+        <li>Wahlmodule: z. B. Qualitätsmanagement, Fahrzeugtechnik, Industrie 4.0, Data Science</li>
+        <li>Sprachkurse & Präsentationstraining</li>
+    </ul>
+
+    <h2 class="subcategory-title">Praxisbezug</h2>
+    <p>Hier können die Praxisbezüge des dualen Studiums aufgeführt werden.</p>
+    <h3>5. Semester:</h3>
+    <p>Praxissemester in einem Unternehmen (auch im Ausland möglich)</p>
+    <h3>7. Semester:</h3>
+    <p>Bachelorarbeit mit intensiver Betreuung</p>
+
+    <h2 class="subcategory-title">Internationalität</h2>
+    <p>Hier können die internationalen Aspekte des dualen Studiums beschrieben werden.</p>
+erschrift Betreuung und A    <ul>
+        <li>Optionale Auslandssemester oder Praktika</li>
+        <li>Internationale Ausrichtung durch Sprachkurse und Projektarbeit</li>
+    </ul>
+
+    <h2 class="subcategory-title">Betreuung und Atmosphäre</h2>
+    <p>Hier können Informationen zur Betreuung und Atmosphäre im Studium aufgeführt werden.</p>
+
+    <h2 class="subcategory-title">Weitere Studiengänge im Bereich Wirtschaftsingenieurwesen an der HS Kempten</h2>
+    <p>Hier können weitere Studiengänge im Bereich Wirtschaftsingenieurwesen an der Hochschule Kempten beschrieben werden.</p>
+    <ul>
+        <li>Technologie und Nachhaltigkeit (B. Eng.)</li>
+        <li>Produktentwicklung im Maschinen- und Anlagenbau (M. Eng.)</li>
+        <li>Innovation, Unternehmertum und Leadership (M. A.)</li>
+        <li>Technisches Innovations- und Produktmanagement (M. Eng.)</li>
+    </ul>
 </body>
 </html>
