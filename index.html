@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
-            padding: 0 40px; /* Increased padding for more indentation */
+            padding: 0 40px;
         }
         form {
             margin-bottom: 20px;
@@ -17,19 +17,34 @@
             margin-bottom: 10px;
         }
         .welcome-banner {
-            background-color: blue;
+            background-color: blue; /* zurückgeändert von grün auf blau */
             color: white;
             text-align: center;
             padding: 20px;
             font-size: 2em;
             margin-bottom: 20px;
         }
+        /* NEU: Navigation noch kleiner und in einer Reihe */
+        .welcome-banner nav a {
+            font-size: 0.75em;
+            padding: 2px 8px;
+            font-weight: normal;
+            text-decoration: underline;
+            color: white;
+        }
+        .welcome-banner nav {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
         .subcategory-title {
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 20px;
-            color: darkblue;
-            border-bottom: 2px solid darkblue;
+            color: darkblue; /* zurückgeändert von darkgreen auf darkblue */
+            border-bottom: 2px solid darkblue; /* zurückgeändert von darkgreen auf darkblue */
             padding-bottom: 5px;
         }
         .subcategory-box {
@@ -42,8 +57,21 @@
     </style>
 </head>
 <body>
-    <div class="welcome-banner">Duales Studium Wirtschaftsingenieurwesen</div>
-    <div class="subcategory-box">
+    <div class="welcome-banner">
+        Duales Studium Wirtschaftsingenieurwesen
+        <div style="margin-top: 15px;">
+            <nav style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+                <a href="#ueberblick" style="color: white; text-decoration: underline; font-weight: bold;">Überblick</a>
+                <a href="#studieninhalte" style="color: white; text-decoration: underline; font-weight: bold;">Studieninhalte</a>
+                <a href="#praxisbezug" style="color: white; text-decoration: underline; font-weight: bold;">Praxisbezug</a>
+                <a href="#internationalitaet" style="color: white; text-decoration: underline; font-weight: bold;">Internationalität</a>
+                <a href="#betreuung" style="color: white; text-decoration: underline; font-weight: bold;">Betreuung und Atmosphäre</a>
+                <a href="#weitere-studiengaenge" style="color: white; text-decoration: underline; font-weight: bold;">Weitere Studiengänge</a>
+                <a href="#kontakt" style="color: white; text-decoration: underline; font-weight: bold;">Kontakt</a>
+            </nav>
+        </div>
+    </div>
+    <div class="subcategory-box" id="ueberblick">
         <h2 class="subcategory-title">Überblick</h2>
         <table border="1" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
             <thead>
@@ -92,7 +120,7 @@
             </tbody>
         </table>
     </div>
-    <div class="subcategory-box">
+    <div class="subcategory-box" id="studieninhalte">
         <h2 class="subcategory-title">Studieninhalte</h2>
         <h3>Grundstudium (1.–2. Semester):</h3>
         <ul>
@@ -106,7 +134,7 @@
             <li>Sprachkurse & Präsentationstraining</li>
         </ul>
     </div>
-    <div class="subcategory-box">
+    <div class="subcategory-box" id="praxisbezug">
         <h2 class="subcategory-title">Praxisbezug</h2>
         <p>Hier können die Praxisbezüge des dualen Studiums aufgeführt werden.</p>
         <h3>5. Semester:</h3>
@@ -114,7 +142,7 @@
         <h3>7. Semester:</h3>
         <p>Bachelorarbeit mit intensiver Betreuung</p>
     </div>
-    <div class="subcategory-box">
+    <div class="subcategory-box" id="internationalitaet">
         <h2 class="subcategory-title">Internationalität</h2>
         <p>Hier können die internationalen Aspekte des dualen Studiums beschrieben werden.</p>
         <ul>
@@ -122,11 +150,11 @@
             <li>Internationale Ausrichtung durch Sprachkurse und Projektarbeit</li>
         </ul>
     </div>
-    <div class="subcategory-box">
+    <div class="subcategory-box" id="betreuung">
         <h2 class="subcategory-title">Betreuung und Atmosphäre</h2>
         <p>Hier können Informationen zur Betreuung und Atmosphäre im Studium aufgeführt werden.</p>
     </div>
-    <div class="subcategory-box">
+    <div class="subcategory-box" id="weitere-studiengaenge">
         <h2 class="subcategory-title">Weitere Studiengänge im Bereich Wirtschaftsingenieurwesen an der HS Kempten</h2>
         <p>Hier können weitere Studiengänge im Bereich Wirtschaftsingenieurwesen an der Hochschule Kempten beschrieben werden.</p>
         <ul>
@@ -135,6 +163,23 @@
             <li>Innovation, Unternehmertum und Leadership (M. A.)</li>
             <li>Technisches Innovations- und Produktmanagement (M. Eng.)</li>
         </ul>
+    </div>
+    <div class="subcategory-box" id="kontakt">
+        <h2 class="subcategory-title">Kontakt</h2>
+        <p>
+            <a href="https://www.hs-kempten.de" target="_blank" style="color:darkblue; text-decoration:underline;">
+                Hochschule Kempten Homepage
+            </a>
+        </p>
+        <p>
+            Bahnhofstraße 61<br>
+            87435 Kempten<br><br>
+            Postfach 1680<br>
+            87406 Kempten<br><br>
+            Tel. 0831/25 23-0<br>
+            Fax 0831/25 23-104<br>
+            E-Mail: post(at)hs-kempten.de
+        </p>
     </div>
 </body>
 </html>
