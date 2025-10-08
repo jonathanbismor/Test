@@ -1,170 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Upload</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Duales Studium Wirtschaftsingenieurwesen</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             padding: 0 40px;
+            background-color: #fff;
         }
-        form {
-            margin-bottom: 20px;
-        }
-        input[type="file"] {
-            margin-bottom: 10px;
-        }
+
+        /* Banner oben mit kleinem Ausschnitt und fester max Höhe */
         .welcome-banner {
-            background-color: blue; /* zurückgeändert von grün auf blau */
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 2em;
+            position: relative;
+            max-height: 150px;
+            overflow: hidden;
+            border-radius: 10px;
             margin-bottom: 20px;
         }
-        /* NEU: Navigation noch kleiner und in einer Reihe */
-        .welcome-banner nav a {
-            font-size: 0.75em;
-            padding: 2px 8px;
-            font-weight: normal;
-            text-decoration: underline;
-            color: white;
+        .welcome-banner img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover; /* Bild wird zugeschnitten, um Höhe zu füllen */
+            display: block;
+            border-radius: 10px;
         }
-        .welcome-banner nav {
-            margin-top: 10px;
+        /* Überschrift auf Bild positionieren */
+        .welcome-banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            white-space: nowrap;
+            pointer-events: none; /* Klicks gehen ans Bild durch */
+        }
+
+        /* Navigation unter Banner */
+        .header-nav {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header-nav nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
             flex-wrap: wrap;
+            gap: 15px;
         }
-        .subcategory-title {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 20px;
-            color: darkblue; /* zurückgeändert von darkgreen auf darkblue */
-            border-bottom: 2px solid darkblue; /* zurückgeändert von darkgreen auf darkblue */
-            padding-bottom: 5px;
+        .header-nav nav a {
+            color: darkblue;
+            text-decoration: underline;
+            font-weight: 500;
+            font-size: 0.9em;
+            padding: 5px 10px;
         }
+
+        /* Überblick mit Bild rechts daneben, gleiche Höhe */
+        .ueberblick-box {
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 40px;
+        }
+
+        .ueberblick-table {
+            flex: 1 1 65%;
+            border-collapse: collapse;
+        }
+        .ueberblick-table th, .ueberblick-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        .ueberblick-table thead tr {
+            background-color: #f2f2f2;
+        }
+
+        .ueberblick-image-container {
+            flex: 1 1 35%;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .ueberblick-image-container img {
+            border-radius: 10px;
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Weitere Unterkategorien */
+
         .subcategory-box {
+            background-color: #f9f9f9;
             border: 1px solid #ccc;
             border-radius: 10px;
             padding: 15px;
             margin-bottom: 20px;
-            background-color: #f9f9f9;
+        }
+
+        .subcategory-title {
+            color: darkblue;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-bottom: 2px solid darkblue;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
+
     <div class="welcome-banner">
-        Duales Studium Wirtschaftsingenieurwesen
-        <div style="margin-top: 15px;">
-            <nav style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-                <a href="#ueberblick" style="color: white; text-decoration: underline; font-weight: bold;">Überblick</a>
-                <a href="#studieninhalte" style="color: white; text-decoration: underline; font-weight: bold;">Studieninhalte</a>
-                <a href="#praxisbezug" style="color: white; text-decoration: underline; font-weight: bold;">Praxisbezug</a>
-                <a href="#internationalitaet" style="color: white; text-decoration: underline; font-weight: bold;">Internationalität</a>
-                <a href="#betreuung" style="color: white; text-decoration: underline; font-weight: bold;">Betreuung und Atmosphäre</a>
-                <a href="#weitere-studiengaenge" style="color: white; text-decoration: underline; font-weight: bold;">Weitere Studiengänge</a>
-                <a href="#kontakt" style="color: white; text-decoration: underline; font-weight: bold;">Kontakt</a>
-            </nav>
-        </div>
+        <img src="https://th.bing.com/th/id/R.00f481e7f58d74e7279d816226c194fe?rik=9b%2fsrN7mbQq6hw&pid=ImgRaw&r=0" alt="Banner Bild Hochschule Kempten" />
+        <h1>Duales Studium Wirtschaftsingenieurwesen</h1>
     </div>
-    <div class="subcategory-box" id="ueberblick">
+
+    <div class="header-nav">
+        <nav>
+            <a href="#ueberblick">Überblick</a>
+            <a href="#studieninhalte">Studieninhalte</a>
+            <a href="#praxisbezug">Praxisbezug</a>
+            <a href="#internationalitaet">Internationalität</a>
+            <a href="#betreuung">Betreuung und Atmosphäre</a>
+            <a href="#weitere-studiengaenge">Weitere Studiengänge</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+
+    <section class="subcategory-box" id="ueberblick">
         <h2 class="subcategory-title">Überblick</h2>
-        <table border="1" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-            <thead>
-                <tr style="background-color: #f2f2f2;">
-                    <th style="padding: 10px; text-align: left;">Merkmal</th>
-                    <th style="padding: 10px; text-align: left;">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 10px;">Abschluss</td>
-                    <td style="padding: 10px;">Bachelor of Engineering (B. Eng.)</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">Studiendauer</td>
-                    <td style="padding: 10px;">7 Semester</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">Studienform</td>
-                    <td style="padding: 10px;">Vollzeit oder dual</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">ECTS</td>
-                    <td style="padding: 10px;">210 Punkte</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">Sprache</td>
-                    <td style="padding: 10px;">Deutsch</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">Studienbeginn</td>
-                    <td style="padding: 10px;">Wintersemester</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">Fakultät</td>
-                    <td style="padding: 10px;">Maschinenbau</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">Zulassungsbeschränkung</td>
-                    <td style="padding: 10px;">Keine</td>
-                </tr>
-                <tr>
-                    <td style="padding: 10px;">Akkreditierung</td>
-                    <td style="padding: 10px;">ASIIN</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="subcategory-box" id="studieninhalte">
+        <div class="ueberblick-box">
+            <table class="ueberblick-table" aria-label="Überblick Tabelle">
+                <thead>
+                    <tr>
+                        <th>Merkmal</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Abschluss</td><td>Bachelor of Engineering (B. Eng.)</td></tr>
+                    <tr><td>Studiendauer</td><td>7 Semester</td></tr>
+                    <tr><td>Studienform</td><td>Vollzeit oder dual</td></tr>
+                    <tr><td>ECTS</td><td>210 Punkte</td></tr>
+                    <tr><td>Sprache</td><td>Deutsch</td></tr>
+                    <tr><td>Studienbeginn</td><td>Wintersemester</td></tr>
+                    <tr><td>Fakultät</td><td>Maschinenbau</td></tr>
+                    <tr><td>Zulassungsbeschränkung</td><td>Keine</td></tr>
+                    <tr><td>Akkreditierung</td><td>ASIIN</td></tr>
+                </tbody>
+            </table>
+            <div class="ueberblick-image-container">
+                <img src="https://th.bing.com/th/id/OIP.5T9gemjP4Qz_STYK-xDuQQHaE7?w=317&h=180&c=7&r=0&o=7&cb=12&pid=1.7&rm=3" alt="Campus der Hochschule Kempten" />
+            </div>
+        </div>
+    </section>
+
+    <section class="subcategory-box" id="studieninhalte">
         <h2 class="subcategory-title">Studieninhalte</h2>
-        <h3>Grundstudium (1.–2. Semester):</h3>
+        <p>📘 <strong>Basisstudium (1. & 2. Semester)</strong></p>
+        <p>In den ersten beiden Semestern werden die grundlegenden Kenntnisse in den folgenden Bereichen vermittelt:</p>
         <ul>
-            <li>Naturwissenschaftliche und technische Grundlagen</li>
-            <li>Wirtschaftliche Basiskenntnisse</li>
+            <li><strong>Mathematik und Physik:</strong> Wichtige Grundlagen für das technische Verständnis.</li>
+            <li><strong>Mechanik und Werkstoffkunde:</strong> Basiswissen für das Verständnis von Materialien und deren Verhalten.</li>
+            <li><strong>Maschinenbau-Grundlagen:</strong> Einführung in die Konstruktion und Fertigungstechnik.</li>
+            <li><strong>Betriebswirtschaftslehre (BWL):</strong> Grundlagen der Wirtschaftswissenschaften.</li>
+            <li><strong>Volkswirtschaftslehre (VWL):</strong> Einführung in die volkswirtschaftlichen Zusammenhänge.</li>
+            <li><strong>Informatik:</strong> Grundlagen der Programmierung und Anwendung von Softwaretools.</li>
         </ul>
-        <h3>Vertiefungsstudium (3.–7. Semester):</h3>
+        <p>Diese Phase legt das Fundament für das Verständnis technischer und wirtschaftlicher Zusammenhänge.</p>
+
+        <p>🛠️ <strong>Vertiefungsstudium (3. bis 7. Semester)</strong></p>
+        <p>Ab dem dritten Semester erfolgt eine Vertiefung in spezifische Themenbereiche:</p>
         <ul>
-            <li>Integrative Fächer wie Produktmanagement, Vertrieb, Logistik</li>
-            <li>Wahlmodule: z. B. Qualitätsmanagement, Fahrzeugtechnik, Industrie 4.0, Data Science</li>
-            <li>Sprachkurse & Präsentationstraining</li>
+            <li><strong>Produktentwicklung und Konstruktion:</strong> Vertiefung der Kenntnisse in der Entwicklung neuer Produkte.</li>
+            <li><strong>Fertigungstechnik und Produktion:</strong> Einblicke in moderne Fertigungsverfahren und Produktionsprozesse.</li>
+            <li><strong>Technische Betriebswirtschaftslehre:</strong> Vertiefung der betriebswirtschaftlichen Kenntnisse im technischen Kontext.</li>
+            <li><strong>Logistik und Supply Chain Management:</strong> Optimierung von Lieferketten und Logistikprozessen.</li>
+            <li><strong>Projektmanagement:</strong> Planung und Steuerung von Projekten.</li>
+            <li><strong>Rechtliche Grundlagen:</strong> Einführung in das technische und wirtschaftliche Recht.</li>
         </ul>
-    </div>
-    <div class="subcategory-box" id="praxisbezug">
+        <p>Zusätzlich werden Schlüsselkompetenzen wie Kommunikation, Präsentation und interkulturelle Kompetenz gefördert.</p>
+
+        <p>🌍 <strong>Praxissemester (5. Semester)</strong></p>
+        <p>Im fünften Semester ist ein Praxissemester vorgesehen, in dem du praktische Erfahrungen in einem Unternehmen sammeln kannst. Dies bietet die Möglichkeit, das erlernte Wissen anzuwenden und wertvolle Einblicke in die Berufspraxis zu erhalten.</p>
+    </section>
+
+    <section class="subcategory-box" id="praxisbezug">
         <h2 class="subcategory-title">Praxisbezug</h2>
-        <p>Hier können die Praxisbezüge des dualen Studiums aufgeführt werden.</p>
-        <h3>5. Semester:</h3>
-        <p>Praxissemester in einem Unternehmen (auch im Ausland möglich)</p>
-        <h3>7. Semester:</h3>
-        <p>Bachelorarbeit mit intensiver Betreuung</p>
-    </div>
-    <div class="subcategory-box" id="internationalitaet">
+        <p>Der Studiengang legt großen Wert auf praxisorientiertes Lernen. Im 5. Semester ist ein verpflichtendes Praxissemester vorgesehen, das in einem Unternehmen absolviert werden kann – auch im Ausland. Dies bietet die Möglichkeit, das erlernte Wissen anzuwenden und wertvolle Einblicke in die Berufspraxis zu erhalten. Darüber hinaus erfolgt die Lehre in modernen Laboren und IT-Einrichtungen, die eine praxisnahe Ausbildung ermöglichen. Die enge Zusammenarbeit mit Unternehmen fördert die Anwendung theoretischer Kenntnisse in realen Projekten.</p>
+    </section>
+
+    <section class="subcategory-box" id="internationalitaet">
         <h2 class="subcategory-title">Internationalität</h2>
-        <p>Hier können die internationalen Aspekte des dualen Studiums beschrieben werden.</p>
-        <ul>
-            <li>Optionale Auslandssemester oder Praktika</li>
-            <li>Internationale Ausrichtung durch Sprachkurse und Projektarbeit</li>
-        </ul>
-    </div>
-    <div class="subcategory-box" id="betreuung">
+        <p>Die Hochschule Kempten pflegt internationale Kooperationen mit über 100 Partnerhochschulen in 40 Ländern weltweit. Studierende haben die Möglichkeit, im Rahmen von Austauschprogrammen oder Praktika internationale Erfahrungen zu sammeln. Diese internationale Ausrichtung bereitet die Studierenden auf eine globalisierte Arbeitswelt vor.</p>
+    </section>
+
+    <section class="subcategory-box" id="betreuung">
         <h2 class="subcategory-title">Betreuung und Atmosphäre</h2>
-        <p>Hier können Informationen zur Betreuung und Atmosphäre im Studium aufgeführt werden.</p>
-    </div>
-    <div class="subcategory-box" id="weitere-studiengaenge">
+        <p>Die Hochschule Kempten legt großen Wert auf eine persönliche Betreuung ihrer Studierenden. Kleine Lerngruppen, Tutorien und spezielle Programme für Studierende sorgen für eine individuelle Unterstützung. Die Professorenschaft ist engagiert und steht den Studierenden bei Praktika, Projektarbeit und Abschlussarbeiten intensiv zur Seite. Der Campus zeichnet sich durch eine familiäre Atmosphäre aus. Studierende haben die Möglichkeit, bei verschiedenen Projekten und Events neue Leute kennenzulernen und Freundschaften zu schließen. Die Stadt Kempten bietet zudem zahlreiche Freizeitmöglichkeiten, die das Studentenleben bereichern.</p>
+    </section>
+
+    <section class="subcategory-box" id="weitere-studiengaenge">
         <h2 class="subcategory-title">Weitere Studiengänge im Bereich Wirtschaftsingenieurwesen an der HS Kempten</h2>
-        <p>Hier können weitere Studiengänge im Bereich Wirtschaftsingenieurwesen an der Hochschule Kempten beschrieben werden.</p>
-        <ul>
-            <li>Technologie und Nachhaltigkeit (B. Eng.)</li>
-            <li>Produktentwicklung im Maschinen- und Anlagenbau (M. Eng.)</li>
-            <li>Innovation, Unternehmertum und Leadership (M. A.)</li>
-            <li>Technisches Innovations- und Produktmanagement (M. Eng.)</li>
-        </ul>
-    </div>
-    <div class="subcategory-box" id="kontakt">
+        <p>Neben dem Bachelorstudiengang Wirtschaftsingenieurwesen Maschinenbau bietet die Hochschule Kempten auch einen Masterstudiengang Wirtschaftsingenieurwesen Maschinenbau an. Dieser baut auf den im Bachelorstudium erworbenen Kenntnissen auf und vertieft die Kompetenzen in den Bereichen Technik, Wirtschaft und Führung. Der Masterstudiengang ist auf drei Semester angelegt und kann sowohl im Winter- als auch im Sommersemester begonnen werden.</p>
+    </section>
+
+    <section class="subcategory-box" id="kontakt">
         <h2 class="subcategory-title">Kontakt</h2>
         <p>
             <a href="https://www.hs-kempten.de" target="_blank" style="color:darkblue; text-decoration:underline;">
@@ -172,14 +227,15 @@
             </a>
         </p>
         <p>
-            Bahnhofstraße 61<br>
-            87435 Kempten<br><br>
-            Postfach 1680<br>
-            87406 Kempten<br><br>
-            Tel. 0831/25 23-0<br>
-            Fax 0831/25 23-104<br>
+            Bahnhofstraße 61<br />
+            87435 Kempten<br /><br />
+            Postfach 1680<br />
+            87406 Kempten<br /><br />
+            Tel. 0831/25 23-0<br />
+            Fax 0831/25 23-104<br />
             E-Mail: post(at)hs-kempten.de
         </p>
-    </div>
+    </section>
+
 </body>
 </html>
